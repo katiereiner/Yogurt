@@ -1,14 +1,20 @@
 $(document).ready(function () {
 
+	
+	var currentURL;
 	chrome.tabs.getSelected(null, function(tab) {
 
-	var currentURL = tab.url;
+	currentURL = tab.url;
 	currentURL = currentURL.split("/");
 	if(currentURL[2] != "ctools.umich.edu")
 	{
 		$("body").html("GO TO CTOOLS");
 	}
 	currentURL = currentURL.pop();
+	currentURL = currentURL.split("-");
+	currentURL = currentURL.pop();
+	helpme();
+
 	//currentURL = currentURL.split("/").pop();
     document.getElementById('currentLink').innerHTML = currentURL;
 });
@@ -16,6 +22,7 @@ $(document).ready(function () {
 
 
 // Initialize the PubNub API connection.
+function helpme(){
 var pubnub = PUBNUB.init({
 publish_key: 'pub-c-8d1214a7-d292-4698-a0bc-458e5b7bf996',
 subscribe_key: 'sub-c-f02d84f8-357b-11e4-afa1-02ee2ddab7fe'
@@ -76,6 +83,7 @@ subscribe_key: 'sub-c-f02d84f8-357b-11e4-afa1-02ee2ddab7fe'
     this.connection.history.apply(this.connection, arguments);
   };
 
+
 // Grab references for all of our elements.
 var messageContent = $('#messageContent'),
 sendMessageButton = $('#sendMessageButton'),
@@ -96,12 +104,24 @@ messageList.listview('refresh');
 };
  
 // Compose and send a message when the user clicks our send message button.
+
+var chatChannel = currentURL, 
+chatRoomName = $('#chatRoomName'),
+charListEl = $('#chatList'),
+subscriptions = [],
+pages = {
+chatList: $("#chatListPage"),
+chat: $("#chatPage")
+};
+
+
 sendMessageButton.click(function (event) {
+
 var message = messageContent.val();
  
 if (message != '') {
 pubnub.publish({
-channel: 'chat',
+channel: chatChannel,
 message: {
 username: 'test',
 text: message
@@ -121,19 +141,9 @@ return false;
  
 // Subscribe to messages coming in from the channel.
 pubnub.subscribe({
-channel: "chat",
+channel: chatChannel,
 message: handleMessage
 });
-
-
-var chatChannel = "chat",
-chatRoomName = $('#chatRoomName'),
-charListEl = $('#chatList'),
-subscriptions = [],
-pages = {
-chatList: $("#chatListPage"),
-chat: $("#chatPage")
-};
  
 
 pubnub.history({
@@ -148,5 +158,8 @@ handleMessage(messages[i], false);
 }
  
 });
+
+};
+
 
 });
