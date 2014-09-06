@@ -28,6 +28,8 @@ $("#nameButton").click(function(){
 
 
   usersname = $("#nameval").val();
+  $("#nameval").val('');
+
 
 
 });
