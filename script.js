@@ -126,7 +126,7 @@ $("#messageList").scrollTop(($("#messageList")[0].scrollHeight));
 
  
 // Scroll to bottom of page
- $("html, body").animate({ scrollTop: $(document).height() - $(window).height() }, 'slow');
+ 
 };
  
 // Compose and send a message when the user clicks our send message button.
