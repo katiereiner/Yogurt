@@ -1,14 +1,17 @@
 h1{
-    color:white;
+    color:#51B9E8;
     text-align: center;
     font-family: 'Delius', cursive;
-    font-size:100px;
-    padding:40px;
+    font-size:40px;
+    padding:-10px;
+    margin:auto 0;
+    letter-spacing: 3px;
 }
 
 .ui-block-a{
 	margin-left: 35%;
 	font-family: 'Delius', cursive;
+	padding-bottom:5px;
 
 }
 
@@ -20,16 +23,20 @@ h1{
 }
 
 .ui-content{
+	padding:5px;
 	background-image: url("pJewmf8.jpg");
 	text-decoration: none;
+	margin:auto 0;
 
 }
 
 #messageList{
-	height: 360px;
-	width:340px;
+	padding:10px;
+	height: 370px;
+	width:330px;
 	overflow: scroll;
-	padding-bottom: 0px;
+	padding-bottom:12px;
+
 }
 
 #currentLink{
@@ -47,10 +54,6 @@ h1{
 
 }
 
-
-.heart{
-	text-align: right;
-}
 
 .text{
 	text-align: left;
@@ -81,9 +84,6 @@ h1{
 	clear: both;
 }
 
-#sendMessageButton{
-	text-decoration: none;
-}
 
 #messageContent {
 	font-family: 'Delius', cursive;

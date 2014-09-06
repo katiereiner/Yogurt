@@ -176,7 +176,7 @@ message: handleMessage
 
 pubnub.history({
 channel: chatChannel,
-limit: 20
+limit: 50
 }, function (messages) {
 messages = messages[0];
 messages = messages || [];
