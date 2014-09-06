@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PubNub Messenger</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon href=icon.png">
+<link rel="apple-touch-startup-image href=startup.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+<link rel="stylesheet" href="css/screen.css" type="text/stylesheet" />
+<script src="JQuery.js"></script>
+<script src="JQueryMob.js"></script>
+<script src="Pubnub.js"></script>
+<script src="script.js"></script>
+</head>
+</html>
+
+<body style = "width:500px;">
+<!-- Chat Page -->
+<div data-role="page" id="chatPage" data-theme="c" class="type-interior">
+ 
+<div data-role="content">
+<div data-role="header" data-position="fixed" data-tap-toggle="false">
+<h1>Pub Messenger</h1>
+</div><!-- /header -->
+ 
+<div data-role="content">
+<ul data-role="listview" id="messageList">
+<!-- <li><span class="username">User123:</span>This is my message.</li> -->
+</ul>
+</div>
+ 
+<div data-role="footer" data-theme="c">
+<textarea id="messageContent"></textarea>
+<div class="ui-grid-a">
+<div class="ui-block-a"><a href="#" id="sendMessageButton" data-role="button">Send Message</a></div>
+<div class="ui-block-b"><a href="#" id="backButton" data-rel="back" data-role="button">Chat Rooms</a></div>
+</div>
+</div>
+</div><!-- /content -->
+ 
+</div><!-- /page -->
+</body>
