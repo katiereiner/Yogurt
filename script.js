@@ -30,7 +30,7 @@ var myObj = { counter: 0 };
 	currentURL = currentURL.split("/");
 	if(currentURL[2] != "ctools.umich.edu")
 	{
-		$("body").html("GO TO CTOOLS");
+    window.location = 'reroute.html';
 	}
 	currentURL = currentURL.pop();
 	currentURL = currentURL.split("-");
