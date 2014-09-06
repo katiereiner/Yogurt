@@ -10,6 +10,9 @@ h1{
 
 .message{
 	background-color: #FFFF66;
+	text-shadow:none;
+	max-width: 100%;
+	word-wrap: break-word;
 }
 
 .ui-content{
@@ -37,4 +40,10 @@ h1{
 
 .text{
 	text-align: left;
+}
+
+textarea{
+	resize:none;
+	overflow: scroll;
+	max-height: 50px;
 }

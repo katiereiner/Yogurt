@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+var myObj = { counter: 0 };
+
 	$("#messageList").scrollTop($("#messageList")[0].scrollHeight);
 	var currentURL;
   var usersname = "a";
@@ -99,17 +101,22 @@ subscribe_key: 'sub-c-f02d84f8-357b-11e4-afa1-02ee2ddab7fe'
   };
 
 
+
+
+
 // Grab references for all of our elements.
 var messageContent = $('#messageContent'),
 sendMessageButton = $('#sendMessageButton'),
 messageList = $('#messageList');
- 
+
 // Handles all the messages coming in from pubnub.subscribe.
 function handleMessage(message) {
 var messageEl = $("<li class='message'>"
 + "<span class='username'>" + message.username + ": </span>"
-+ message.text
-+ "</li>");
++ message.text + "</li>");
+
+
+messageEl.css("backgroundColor", getRandomColor(myObj));
 messageList.append(messageEl);
 messageList.listview('refresh');
 
@@ -135,7 +142,6 @@ chat: $("#chatPage")
 
 
 sendMessageButton.click(function (event) {
-
 
 var message = messageContent.val();
  
@@ -182,6 +188,31 @@ handleMessage(messages[i], false);
 });
 
 };
+function getRandomColor(obj) {
 
+
+    var colors = new Array('#F7C2AB', '#F7F4AD', '#96D6CE', '#8A8DDB', '#A06FBF');
+    //var holder = Math.floor(Math.random() * 4);
+    var temp = colors[obj.counter];
+    obj.counter = obj.counter + 1;
+    if(obj.counter == 5)
+    {
+      obj.counter = 0;
+    }
+    /*while($(".message.last").css("backgroundColor") == temp)
+    {
+      holder = Math.floor(Math.random() * 4);
+      temp = colors[holder];
+    }*/
+
+    return temp;
+
+   /* var letters = 'ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 6)];
+    }
+    return color;*/
+}
 
 });
