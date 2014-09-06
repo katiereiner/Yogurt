@@ -18,6 +18,7 @@ h1{
 }
 
 #messageList{
+	height: 200px;
 	overflow: scroll;
 }
 

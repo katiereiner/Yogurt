@@ -1,7 +1,8 @@
 $(document).ready(function () {
 
-	
+	$("#messageList").scrollTop($("#messageList")[0].scrollHeight);
 	var currentURL;
+  var usersname = "a";
 	chrome.tabs.getSelected(null, function(tab) {
 
 	currentURL = tab.url;
@@ -21,6 +22,14 @@ $(document).ready(function () {
 
 	//currentURL = currentURL.split("/").pop();
     document.getElementById('currentLink').innerHTML = tabTitle;
+});
+
+$("#nameButton").click(function(){
+
+
+  usersname = $("#nameval").val();
+
+
 });
 
 
@@ -102,9 +111,13 @@ var messageEl = $("<li class='message'>"
 messageList.append(messageEl);
 messageList.listview('refresh');
 
+
+$("#messageList").scrollTop(($("#messageList")[0].scrollHeight));
+
+
  
 // Scroll to bottom of page
-// $("html, body").animate({ scrollTop: $(document).height() - $(window).height() }, 'slow');
+ $("html, body").animate({ scrollTop: $(document).height() - $(window).height() }, 'slow');
 };
  
 // Compose and send a message when the user clicks our send message button.
@@ -121,18 +134,21 @@ chat: $("#chatPage")
 
 sendMessageButton.click(function (event) {
 
+
 var message = messageContent.val();
  
 if (message != '') {
 pubnub.publish({
 channel: chatChannel,
 message: {
-username: 'test',
+username: usersname,
 text: message
 }
 });
  
 messageContent.val("");
+
+
 }
 });
  
