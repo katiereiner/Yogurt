@@ -32,8 +32,8 @@ h1{
 
 #messageList{
 	padding:10px;
-	height: 370px;
-	width:330px;
+	height: 360px;
+	width:335px;
 	overflow: scroll;
 	padding-bottom:12px;
 
@@ -84,6 +84,7 @@ display: inline;
 	margin-top: -40px;
 	margin-left: -50px;
 	width: 100px;
+	margin-left:0px;
 }
 .clear{
 	clear: both;
@@ -98,8 +99,9 @@ display: inline;
 
 
 #messageContent {
+	margin-top:3px;
 	font-family: 'Delius', cursive;
-	margin: 3px;
+	margin-bottom:5px;
 }
 
 #youralias{
