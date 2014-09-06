@@ -1,0 +1,17 @@
+{
+	"name": "Yogurt",
+	"version": "0.0.1",
+	"manifest_version": 2,
+	"browser_action": {
+		"default_title": "Anonymous Chat w Friends",
+		"default_icon": "icon_43961.png",
+		"default_popup" : "froyo.html"
+		},
+
+		"background": {
+			"scripts": ["event.js"],
+			"persistent": false
+			},
+
+			"permissions": ["<all_urls>"]
+		}
