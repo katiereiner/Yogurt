@@ -201,7 +201,7 @@ handleMessage(messages[i], false);
 function getRandomColor(obj) {
 
 
-    var colors = new Array('#F8D3BC', '#F8F5BE', '#A7E7DF', '#9B9EEC', '#B17FCF');
+    var colors = new Array('#CDE0FF', '#BBCDFF', '#FAF49A', '#BFDBE8', '#FAF4BD');
     //var holder = Math.floor(Math.random() * 4);
     var temp = colors[obj.counter];
     obj.counter = obj.counter + 1;

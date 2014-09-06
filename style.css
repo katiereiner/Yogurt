@@ -1,7 +1,9 @@
+
+
 h1{
     color:#51B9E8;
     text-align: center;
-    font-family: 'Delius', cursive;
+    font-family: 'Comfortaa', cursive;
     font-size:40px;
     padding:-10px;
     margin:auto 0;
@@ -10,62 +12,66 @@ h1{
 
 .ui-block-a{
 	margin-left: 35%;
-	font-family: 'Delius', cursive;
-	padding-bottom:5px;
+	font-family: 'Comfortaa', cursive;
+	padding-bottom:7px;
 
 }
 
 .message{
-	font-family: 'Delius', cursive;
+	font-family: 'Comfortaa', cursive;
 	text-shadow:none;
 	max-width: 100%;
 	word-wrap: break-word;
+	font-size: 12px;
 }
 
 .ui-content{
 	padding:5px;
 	background-image: url("pJewmf8.jpg");
-	text-decoration: none;
 	margin:auto 0;
-
+	position:relative;
+	top:-45px;
 }
 
 #messageList{
-	padding:10px;
-	height: 400px;
+	padding:5px;
+	height: 398px;
 	width:335px;
 	overflow: scroll;
 	padding-bottom:12px;
+	padding-top:10px;
+	position:relative;
+}
 
+#banner {
+	position:relative;
+	left:23%;
+	top:-20px;
 }
 
 #currentLink{
 	background-color: #595959;
 	padding:10px;
 	text-align:center;
-	font-family: 'Delius', cursive;
+	font-family: 'Comfortaa', cursive;
 	size:40px;
 	text-shadow:none;
 	color: white;
+	position:relative;
+	top:-45px;
+	padding-bottom: 7px;
 }
-
-.ui-mobile-viewport{
-	background-color: #3399FF;
-	font-family: 'Delius', cursive;
-
-}
-
 
 .text{
 	text-align: left;
-	font-family: 'Delius', cursive;
-	font-size:20px;
+	font-family: 'Comfortaa', cursive;
+	font-size:5px;
 
 }
 
 
 .nameButton {
-	font-family: 'Delius', cursive;
+	font-family: 'Comfortaa', cursive;
 	font-size: 5px;
 	text-align: center;
 	position: relative;
@@ -85,10 +91,10 @@ h1{
 #nameval{
 	text-align: center;
 	position:relative;
-	font-family: 'Delius', cursive;
+	font-family: 'Comfortaa', cursive;
 	width:110px;
 	float:right;
-	top:5px;
+	top:-40px;
 	margin-right:10px;
 	height:25px;
 	padding-bottom: 5px;
@@ -100,8 +106,10 @@ h1{
 
 
 #messageContent {
+	position:relative;
+	top:-47px;
 	margin-top:3px;
-	font-family: 'Delius', cursive;
+	font-family: 'Comfortaa', cursive;
 	margin-bottom:5px;
 }
 
@@ -110,10 +118,11 @@ h1{
 	float:left;
 	display:inline;
 	padding: 5px;
-	top:12px;
-	font-family: 'Delius', cursive;
+	top:-30px;
+	font-family: 'Comfortaa', cursive;
 	margin-right: 5px;
 	padding-bottom: 10px;
+	font-size:15px;
 }
 
 
