@@ -13,10 +13,14 @@ $(document).ready(function () {
 	currentURL = currentURL.pop();
 	currentURL = currentURL.split("-");
 	currentURL = currentURL.pop();
+
+	var tabTitle = tab.title;
+	tabTitle = tabTitle.split(":");
+	tabTitle = tabTitle[1];
 	helpme();
 
 	//currentURL = currentURL.split("/").pop();
-    document.getElementById('currentLink').innerHTML = currentURL;
+    document.getElementById('currentLink').innerHTML = tabTitle;
 });
 
 
