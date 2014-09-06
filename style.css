@@ -40,12 +40,13 @@ h1{
 }
 
 #currentLink{
-	background-color: #3399FF;
+	background-color: #595959;
 	padding:10px;
 	text-align:center;
 	font-family: 'Delius', cursive;
 	size:40px;
 	text-shadow:none;
+	color: white;
 }
 
 .ui-mobile-viewport{
@@ -63,28 +64,47 @@ h1{
 }
 
 .cont{
-	width: 30%;
-	position:relative;
-	left:70px;
+	width: 70%;
 	text-align: center;
-	float: left;
-	padding:5px;
-	display:inline;
 	font-family: 'Delius', cursive;
-	size:30px;
+display: inline;
 
 }
+
 
 .nameButton {
 	font-family: 'Delius', cursive;
-	font-size: 10px;
+	font-size: 5px;
+	text-align: center;
+	position: relative;
 }
 
+.textb{
+	position: absolute;
+	margin-top: -40px;
+	margin-left: -50px;
+	width: 100px;
+}
 .clear{
 	clear: both;
+}
+
+#nameval{
+	text-align: center;
+}
+#sendMessageButton{
+	text-decoration: none;
 }
 
 
 #messageContent {
 	font-family: 'Delius', cursive;
+	margin: 3px;
+}
+
+#youralias{
+	text-align: center;
+	padding: 5px;
+
+
 }
