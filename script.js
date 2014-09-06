@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
 
+ 
 var usersname = "a";
 
 $("#nameval").bind('keydown', function (event) {
@@ -9,7 +10,7 @@ if((event.keyCode || event.charCode) !== 13) return true;
 usersname = $("#nameval").val();
 $("#nameval").val('');
 
-var stringy = "Your Alias:" + " "+ usersname;
+var stringy = "Your Alias:"+" "+ "<span class = uname>" + usersname + "</span>";
 document.getElementById('youralias').innerHTML = stringy;
 
 return false;
@@ -17,7 +18,7 @@ return false;
 
 
 var tempstudent = "STUDENT" + Math.floor(Math.random() * 99999);
-document.getElementById('youralias').innerHTML = "Your Alias:" + " " + tempstudent;
+document.getElementById('youralias').innerHTML = "Your Alias:" + " " + "<span class = uname>" +tempstudent+"</span>";
 usersname = tempstudent;
 
 var myObj = { counter: 0 };
@@ -30,7 +31,7 @@ var myObj = { counter: 0 };
 	currentURL = currentURL.split("/");
 	if(currentURL[2] != "ctools.umich.edu")
 	{
-		$("body").html("GO TO CTOOLS");
+		window.location = 'reroute.html';
 	}
 	currentURL = currentURL.pop();
 	currentURL = currentURL.split("-");
@@ -46,6 +47,11 @@ var myObj = { counter: 0 };
 });
 
 
+$(".uname").click(function(){
+
+
+
+})
 
 
 // Initialize the PubNub API connection.
@@ -121,10 +127,21 @@ messageList = $('#messageList');
 
 // Handles all the messages coming in from pubnub.subscribe.
 function handleMessage(message) {
-var messageEl = $("<li class='message'>"
-+ "<span class='username'>" + message.username + ": </span>"
-+ message.text + "</li>");
+var messageEl;
 
+
+if(message.username == usersname)
+{
+  messageEl = $("<li class='message'>"
++ "<span class='username'>" + message.username + ": </span>"
++ message.text + "<button class = delete> Delete </button>"+"</li>" );
+}
+
+else{
+  messageEl = $("<li class='message'>"
++ "<span class='username'>" + message.username + ": </span>"
++ message.text +"</li>" );
+}
 
 messageEl.css("backgroundColor", getRandomColor(myObj));
 messageList.append(messageEl);
@@ -134,11 +151,16 @@ messageList.listview('refresh');
 $("#messageList").scrollTop(($("#messageList")[0].scrollHeight));
 
 
- 
+ $(".delete").click(function(){
+
+  var victim = $(this).parent();
+  victim.hide();
+});
 // Scroll to bottom of page
  
 };
- 
+
+
 // Compose and send a message when the user clicks our send message button.
 
 var chatChannel = currentURL, 
