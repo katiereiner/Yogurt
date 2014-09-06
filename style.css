@@ -33,7 +33,8 @@ h1{
 }
 
 #currentLink{
-	background-color: #3399FF;
+	background-color: #595959;
+	color:white;
 	padding:10px;
 	text-align:center;
 	font-family: 'Delius', cursive;

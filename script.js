@@ -1,52 +1,52 @@
 $(document).ready(function () {
 
-var myObj = { counter: 0 };
+  var myObj = { counter: 0 };
 
-	$("#messageList").scrollTop($("#messageList")[0].scrollHeight);
-	var currentURL;
+  $("#messageList").scrollTop($("#messageList")[0].scrollHeight);
+  var currentURL;
   var usersname = "a";
-	chrome.tabs.getSelected(null, function(tab) {
+  chrome.tabs.getSelected(null, function(tab) {
 
-	currentURL = tab.url;
-	currentURL = currentURL.split("/");
-	if(currentURL[2] != "ctools.umich.edu")
-	{
-		$("body").html("GO TO CTOOLS");
-	}
-	currentURL = currentURL.pop();
-	currentURL = currentURL.split("-");
-	currentURL = currentURL.pop();
+   currentURL = tab.url;
+   currentURL = currentURL.split("/");
+   if(currentURL[2] != "ctools.umich.edu")
+   {    
+    window.location = 'reroute.html';
+  }
+  currentURL = currentURL.pop();
+  currentURL = currentURL.split("-");
+  currentURL = currentURL.pop();
 
-	var tabTitle = tab.title;
-	tabTitle = tabTitle.split(":");
-	tabTitle = tabTitle[1];
-	helpme();
+  var tabTitle = tab.title;
+  tabTitle = tabTitle.split(":");
+  tabTitle = tabTitle[1];
+  helpme();
 
 	//currentURL = currentURL.split("/").pop();
-    document.getElementById('currentLink').innerHTML = tabTitle;
+  document.getElementById('currentLink').innerHTML = tabTitle;
 });
 
-$("#nameButton").click(function(){
+  $("#nameButton").click(function(){
 
 
-  usersname = $("#nameval").val();
-  $("#nameval").val('');
+    usersname = $("#nameval").val();
+    $("#nameval").val('');
 
 
 
-});
+  });
 
 
 
 // Initialize the PubNub API connection.
 function helpme(){
-var pubnub = PUBNUB.init({
-publish_key: 'pub-c-8d1214a7-d292-4698-a0bc-458e5b7bf996',
-subscribe_key: 'sub-c-f02d84f8-357b-11e4-afa1-02ee2ddab7fe'
+  var pubnub = PUBNUB.init({
+    publish_key: 'pub-c-8d1214a7-d292-4698-a0bc-458e5b7bf996',
+    subscribe_key: 'sub-c-f02d84f8-357b-11e4-afa1-02ee2ddab7fe'
 
-});
- 
-   function PubNub() {
+  });
+  
+  function PubNub() {
     this.publishKey = 'pub-c-8d1214a7-d292-4698-a0bc-458e5b7bf996';
     this.subscribeKey = 'sub-c-f02d84f8-357b-11e4-afa1-02ee2ddab7fe';
     this.subscriptions = localStorage["pn-subscriptions"] || [];
@@ -111,24 +111,24 @@ messageList = $('#messageList');
 
 // Handles all the messages coming in from pubnub.subscribe.
 function handleMessage(message) {
-var messageEl = $("<li class='message'>"
-+ "<span class='username'>" + message.username + ": </span>"
-+ message.text + "</li>");
+  var messageEl = $("<li class='message'>"
+    + "<span class='username'>" + message.username + ": </span>"
+    + message.text + "</li>");
 
 
-messageEl.css("backgroundColor", getRandomColor(myObj));
-messageList.append(messageEl);
-messageList.listview('refresh');
+  messageEl.css("backgroundColor", getRandomColor(myObj));
+  messageList.append(messageEl);
+  messageList.listview('refresh');
 
 
-$("#messageList").scrollTop(($("#messageList")[0].scrollHeight));
+  $("#messageList").scrollTop(($("#messageList")[0].scrollHeight));
 
 
- 
+  
 // Scroll to bottom of page
- 
+
 };
- 
+
 // Compose and send a message when the user clicks our send message button.
 
 var chatChannel = currentURL, 
@@ -136,62 +136,62 @@ chatRoomName = $('#chatRoomName'),
 charListEl = $('#chatList'),
 subscriptions = [],
 pages = {
-chatList: $("#chatListPage"),
-chat: $("#chatPage")
+  chatList: $("#chatListPage"),
+  chat: $("#chatPage")
 };
 
 
 sendMessageButton.click(function (event) {
 
-var message = messageContent.val();
- 
-if (message != '') {
-pubnub.publish({
-channel: chatChannel,
-message: {
-username: usersname,
-text: message
-}
-});
- 
-messageContent.val("");
+  var message = messageContent.val();
+  
+  if (message != '') {
+    pubnub.publish({
+      channel: chatChannel,
+      message: {
+        username: usersname,
+        text: message
+      }
+    });
+    
+    messageContent.val("");
 
 
-}
+  }
 });
- 
+
 // Also send a message when the user hits the enter button in the text area.
 messageContent.bind('keydown', function (event) {
-if((event.keyCode || event.charCode) !== 13) return true;
-sendMessageButton.click();
-return false;
+  if((event.keyCode || event.charCode) !== 13) return true;
+  sendMessageButton.click();
+  return false;
 });
- 
+
 // Subscribe to messages coming in from the channel.
 pubnub.subscribe({
-channel: chatChannel,
-message: handleMessage
+  channel: chatChannel,
+  message: handleMessage
 });
- 
+
 
 pubnub.history({
-channel: chatChannel,
-limit: 20
+  channel: chatChannel,
+  limit: 20
 }, function (messages) {
-messages = messages[0];
-messages = messages || [];
- 
-for(var i = 0; i < messages.length; i++) {
-handleMessage(messages[i], false);
-}
- 
+  messages = messages[0];
+  messages = messages || [];
+  
+  for(var i = 0; i < messages.length; i++) {
+    handleMessage(messages[i], false);
+  }
+  
 });
 
 };
 function getRandomColor(obj) {
 
 
-    var colors = new Array('#F7C2AB', '#F7F4AD', '#96D6CE', '#8A8DDB', '#A06FBF');
+  var colors = new Array('#F7C2AB', '#F7F4AD', '#96D6CE', '#8A8DDB', '#A06FBF');
     //var holder = Math.floor(Math.random() * 4);
     var temp = colors[obj.counter];
     obj.counter = obj.counter + 1;
@@ -213,6 +213,6 @@ function getRandomColor(obj) {
         color += letters[Math.floor(Math.random() * 6)];
     }
     return color;*/
-}
+  }
 
 });
