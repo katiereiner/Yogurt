@@ -1,10 +1,29 @@
 $(document).ready(function () {
 
+
+var usersname = "a";
+
+$("#nameval").bind('keydown', function (event) {
+
+if((event.keyCode || event.charCode) !== 13) return true;
+usersname = $("#nameval").val();
+$("#nameval").val('');
+
+var stringy = "Your Alias:" + " "+ usersname;
+document.getElementById('youralias').innerHTML = stringy;
+
+return false;
+});
+
+
+var tempstudent = "STUDENT" + Math.floor(Math.random() * 99999);
+document.getElementById('youralias').innerHTML = "Your Alias:" + " " + tempstudent;
+usersname = tempstudent;
+
 var myObj = { counter: 0 };
 
 	$("#messageList").scrollTop($("#messageList")[0].scrollHeight);
 	var currentURL;
-  var usersname = "a";
 	chrome.tabs.getSelected(null, function(tab) {
 
 	currentURL = tab.url;
@@ -26,15 +45,6 @@ var myObj = { counter: 0 };
     document.getElementById('currentLink').innerHTML = tabTitle;
 });
 
-$("#nameButton").click(function(){
-
-
-  usersname = $("#nameval").val();
-  $("#nameval").val('');
-
-
-
-});
 
 
 
@@ -191,7 +201,7 @@ handleMessage(messages[i], false);
 function getRandomColor(obj) {
 
 
-    var colors = new Array('#F7C2AB', '#F7F4AD', '#96D6CE', '#8A8DDB', '#A06FBF');
+    var colors = new Array('#F8D3BC', '#F8F5BE', '#A7E7DF', '#9B9EEC', '#B17FCF');
     //var holder = Math.floor(Math.random() * 4);
     var temp = colors[obj.counter];
     obj.counter = obj.counter + 1;
