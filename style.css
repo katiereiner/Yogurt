@@ -3,7 +3,7 @@
 h1{
     color:#51B9E8;
     text-align: center;
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size:40px;
     padding:-10px;
     margin:auto 0;
@@ -12,17 +12,17 @@ h1{
 
 .ui-block-a{
 	margin-left: 35%;
-	font-family: 'Comfortaa', cursive;
+	font-family: 'Source Sans Pro', sans-serif;
 	padding-bottom:7px;
 
 }
 
 .message{
-	font-family: 'Comfortaa', cursive;
+	font-family: 'Source Sans Pro', sans-serif;
 	text-shadow:none;
 	max-width: 100%;
 	word-wrap: break-word;
-	font-size: 12px;
+	font-size: 15px;
 }
 
 .ui-content{
@@ -53,7 +53,7 @@ h1{
 	background-color: #595959;
 	padding:10px;
 	text-align:center;
-	font-family: 'Comfortaa', cursive;
+	font-family: 'Source Sans Pro', sans-serif;
 	size:40px;
 	text-shadow:none;
 	color: white;
@@ -64,14 +64,14 @@ h1{
 
 .text{
 	text-align: left;
-	font-family: 'Comfortaa', cursive;
-	font-size:5px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size:10px;
 
 }
 
 
 .nameButton {
-	font-family: 'Comfortaa', cursive;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 5px;
 	text-align: center;
 	position: relative;
@@ -91,7 +91,7 @@ h1{
 #nameval{
 	text-align: center;
 	position:relative;
-	font-family: 'Comfortaa', cursive;
+	font-family: 'Source Sans Pro', sans-serif;
 	width:110px;
 	float:right;
 	top:-40px;
@@ -109,7 +109,7 @@ h1{
 	position:relative;
 	top:-47px;
 	margin-top:3px;
-	font-family: 'Comfortaa', cursive;
+	font-family: 'Source Sans Pro', sans-serif;
 	margin-bottom:5px;
 }
 
@@ -119,7 +119,7 @@ h1{
 	display:inline;
 	padding: 5px;
 	top:-30px;
-	font-family: 'Comfortaa', cursive;
+	font-family: 'Source Sans Pro', sans-serif;
 	margin-right: 5px;
 	padding-bottom: 10px;
 	font-size:15px;
