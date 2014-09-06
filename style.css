@@ -1,0 +1,39 @@
+h1{
+    color:white;
+    text-align: center
+}
+
+.ui-block-a{
+	margin-left: 40%;
+	text-decoration: none;
+}
+
+.message{
+	background-color: #FFFF66;
+}
+
+.ui-content{
+	background-image: url("pJewmf8.jpg");
+
+}
+
+#messageList{
+	overflow: scroll;
+}
+
+#currentLink{
+	background-color: #3399FF;
+}
+
+.ui-mobile-viewport{
+	background-color: #3399FF;
+}
+
+
+.heart{
+	text-align: right;
+}
+
+.text{
+	text-align: left;
+}
