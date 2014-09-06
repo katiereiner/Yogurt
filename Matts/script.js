@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
 	chrome.tabs.getSelected(null, function(tab) {
 
 	var currentURL = tab.url;
@@ -122,12 +121,12 @@ return false;
  
 // Subscribe to messages coming in from the channel.
 pubnub.subscribe({
-channel: currentURL,
+channel: "chat",
 message: handleMessage
 });
 
 
-var chatChannel = currentURL,
+var chatChannel = "chat",
 chatRoomName = $('#chatRoomName'),
 charListEl = $('#chatList'),
 subscriptions = [],
