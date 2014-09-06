@@ -1,14 +1,17 @@
 h1{
-    color:white;
+    color:#51B9E8;
     text-align: center;
     font-family: 'Delius', cursive;
-    font-size:100px;
-    padding:40px;
+    font-size:40px;
+    padding:-10px;
+    margin:auto 0;
+    letter-spacing: 3px;
 }
 
 .ui-block-a{
 	margin-left: 35%;
 	font-family: 'Delius', cursive;
+	padding-bottom:5px;
 
 }
 
@@ -20,16 +23,20 @@ h1{
 }
 
 .ui-content{
+	padding:5px;
 	background-image: url("pJewmf8.jpg");
 	text-decoration: none;
+	margin:auto 0;
 
 }
 
 #messageList{
+	padding:10px;
 	height: 360px;
-	width:340px;
+	width:335px;
 	overflow: scroll;
-	padding-bottom: 0px;
+	padding-bottom:12px;
+
 }
 
 #currentLink{
@@ -48,10 +55,6 @@ h1{
 
 }
 
-
-.heart{
-	text-align: right;
-}
 
 .text{
 	text-align: left;
@@ -81,6 +84,7 @@ display: inline;
 	margin-top: -40px;
 	margin-left: -50px;
 	width: 100px;
+	margin-left:0px;
 }
 .clear{
 	clear: both;
@@ -93,9 +97,11 @@ display: inline;
 	text-decoration: none;
 }
 
+
 #messageContent {
+	margin-top:3px;
 	font-family: 'Delius', cursive;
-	margin: 3px;
+	margin-bottom:5px;
 }
 
 #youralias{
